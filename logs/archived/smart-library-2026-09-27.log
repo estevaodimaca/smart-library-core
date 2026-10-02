@@ -1,0 +1,1089 @@
+2026-09-27 10:27:54 [main] INFO  m.c.d.s.SmartLibraryApplication - Starting SmartLibraryApplication using Java 25.0.3 with PID 37986 (/home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core/target/classes started by estevaodimaca in /home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core)
+2026-09-27 10:27:54 [main] DEBUG m.c.d.s.SmartLibraryApplication - Running with Spring Boot v4.1.1, Spring v7.0.9
+2026-09-27 10:27:54 [main] INFO  m.c.d.s.SmartLibraryApplication - The following 1 profile is active: "dev"
+2026-09-27 10:27:54 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.3.Final
+2026-09-27 10:27:55 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-27 10:27:55 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 43 ms. Found 3 JPA repository interfaces.
+2026-09-27 10:27:55 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-09-27 10:27:55 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-27 10:27:55 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-27 10:27:55 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-27 10:27:55 [main] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1276 ms
+2026-09-27 10:27:55 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-09-27 10:27:55 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:smart_library_db user=SA
+2026-09-27 10:27:55 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-09-27 10:27:56 [main] WARN  o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #1 of file [/home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core/target/classes/schema.sql]: CREATE TABLE transactions ( id UUID PRIMARY KEY DEFAULT gen_random_uuid(), name VARCHAR(100) NOT NULL, route VARCHAR(255), icon VARCHAR(50), parent_id UUID REFERENCES transactions(id) ON DELETE CASCADE, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP, created_by VARCHAR(255), updated_by VARCHAR(255) )
+2026-09-27 10:27:56 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-09-27 10:27:56 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-09-27 10:27:56 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-09-27 10:27:56 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-09-27 10:27:56 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #1 of file [/home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core/target/classes/schema.sql]: CREATE TABLE transactions ( id UUID PRIMARY KEY DEFAULT gen_random_uuid(), name VARCHAR(100) NOT NULL, route VARCHAR(255), icon VARCHAR(50), parent_id UUID REFERENCES transactions(id) ON DELETE CASCADE, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP, created_by VARCHAR(255), updated_by VARCHAR(255) )
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:977)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at mz.com.dimasoft.smartlibrary.SmartLibraryApplication.main(SmartLibraryApplication.java:19)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #1 of file [/home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core/target/classes/schema.sql]: CREATE TABLE transactions ( id UUID PRIMARY KEY DEFAULT gen_random_uuid(), name VARCHAR(100) NOT NULL, route VARCHAR(255), icon VARCHAR(50), parent_id UUID REFERENCES transactions(id) ON DELETE CASCADE, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP, created_by VARCHAR(255), updated_by VARCHAR(255) )
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1815)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309)
+	... 10 common frames omitted
+Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of file [/home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core/target/classes/schema.sql]: CREATE TABLE transactions ( id UUID PRIMARY KEY DEFAULT gen_random_uuid(), name VARCHAR(100) NOT NULL, route VARCHAR(255), icon VARCHAR(50), parent_id UUID REFERENCES transactions(id) ON DELETE CASCADE, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP, created_by VARCHAR(255), updated_by VARCHAR(255) )
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:293)
+	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:254)
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:54)
+	at org.springframework.boot.jdbc.init.DataSourceScriptDatabaseInitializer.runScripts(DataSourceScriptDatabaseInitializer.java:87)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.runScripts(AbstractScriptDatabaseInitializer.java:159)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyScripts(AbstractScriptDatabaseInitializer.java:120)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applySchemaScripts(AbstractScriptDatabaseInitializer.java:109)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.initializeDatabase(AbstractScriptDatabaseInitializer.java:87)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.afterPropertiesSet(AbstractScriptDatabaseInitializer.java:77)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1811)
+	... 17 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE transactions ( id UUID PRIMARY KEY [*]DEFAULT gen_random_uuid(), name VARCHAR(100) NOT NULL, route VARCHAR(255), icon VARCHAR(50), parent_id UUID REFERENCES transactions(id) ON DELETE CASCADE, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP, created_by VARCHAR(255), updated_by VARCHAR(255) )"; expected "HASH, CONSTRAINT, COMMENT, UNIQUE, NOT NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE transactions ( id UUID PRIMARY KEY DEFAULT gen_random_uuid(), name VARCHAR(100) NOT NULL, route VARCHAR(255), icon VARCHAR(50), parent_id UUID REFERENCES transactions(id) ON DELETE CASCADE, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP, created_by VARCHAR(255), updated_by VARCHAR(255) ) [42001-240]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.getSyntaxError(DbException.java:261)
+	at org.h2.command.ParserBase.getSyntaxError(ParserBase.java:762)
+	at org.h2.command.ParserBase.read(ParserBase.java:369)
+	at org.h2.command.ParserBase.readIfMore(ParserBase.java:637)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:8927)
+	at org.h2.command.Parser.parseCreate(Parser.java:6483)
+	at org.h2.command.Parser.parsePrepared(Parser.java:648)
+	at org.h2.command.Parser.parse(Parser.java:584)
+	at org.h2.command.Parser.parse(Parser.java:564)
+	at org.h2.command.Parser.prepareCommand(Parser.java:487)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:647)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:563)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1160)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:261)
+	... 27 common frames omitted
+2026-09-27 10:29:01 [main] INFO  m.c.d.s.SmartLibraryApplication - Starting SmartLibraryApplication using Java 25.0.3 with PID 38362 (/home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core/target/classes started by estevaodimaca in /home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core)
+2026-09-27 10:29:01 [main] DEBUG m.c.d.s.SmartLibraryApplication - Running with Spring Boot v4.1.1, Spring v7.0.9
+2026-09-27 10:29:01 [main] INFO  m.c.d.s.SmartLibraryApplication - No active profile set, falling back to 1 default profile: "default"
+2026-09-27 10:29:01 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.3.Final
+2026-09-27 10:29:01 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-27 10:29:01 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 34 ms. Found 3 JPA repository interfaces.
+2026-09-27 10:29:02 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-09-27 10:29:02 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-27 10:29:02 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-27 10:29:02 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-27 10:29:02 [main] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 967 ms
+2026-09-27 10:29:02 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-09-27 10:29:02 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:smart_library_db user=SA
+2026-09-27 10:29:02 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-09-27 10:29:02 [main] WARN  o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #1 of file [/home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core/target/classes/schema.sql]: CREATE TABLE transactions ( id UUID PRIMARY KEY DEFAULT gen_random_uuid(), name VARCHAR(100) NOT NULL, route VARCHAR(255), icon VARCHAR(50), parent_id UUID REFERENCES transactions(id) ON DELETE CASCADE, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP, created_by VARCHAR(255), updated_by VARCHAR(255) )
+2026-09-27 10:29:02 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-09-27 10:29:02 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-09-27 10:29:02 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-09-27 10:29:02 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-09-27 10:29:02 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #1 of file [/home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core/target/classes/schema.sql]: CREATE TABLE transactions ( id UUID PRIMARY KEY DEFAULT gen_random_uuid(), name VARCHAR(100) NOT NULL, route VARCHAR(255), icon VARCHAR(50), parent_id UUID REFERENCES transactions(id) ON DELETE CASCADE, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP, created_by VARCHAR(255), updated_by VARCHAR(255) )
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:977)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at mz.com.dimasoft.smartlibrary.SmartLibraryApplication.main(SmartLibraryApplication.java:19)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #1 of file [/home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core/target/classes/schema.sql]: CREATE TABLE transactions ( id UUID PRIMARY KEY DEFAULT gen_random_uuid(), name VARCHAR(100) NOT NULL, route VARCHAR(255), icon VARCHAR(50), parent_id UUID REFERENCES transactions(id) ON DELETE CASCADE, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP, created_by VARCHAR(255), updated_by VARCHAR(255) )
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1815)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309)
+	... 10 common frames omitted
+Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of file [/home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core/target/classes/schema.sql]: CREATE TABLE transactions ( id UUID PRIMARY KEY DEFAULT gen_random_uuid(), name VARCHAR(100) NOT NULL, route VARCHAR(255), icon VARCHAR(50), parent_id UUID REFERENCES transactions(id) ON DELETE CASCADE, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP, created_by VARCHAR(255), updated_by VARCHAR(255) )
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:293)
+	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:254)
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:54)
+	at org.springframework.boot.jdbc.init.DataSourceScriptDatabaseInitializer.runScripts(DataSourceScriptDatabaseInitializer.java:87)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.runScripts(AbstractScriptDatabaseInitializer.java:159)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyScripts(AbstractScriptDatabaseInitializer.java:120)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applySchemaScripts(AbstractScriptDatabaseInitializer.java:109)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.initializeDatabase(AbstractScriptDatabaseInitializer.java:87)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.afterPropertiesSet(AbstractScriptDatabaseInitializer.java:77)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1811)
+	... 17 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE transactions ( id UUID PRIMARY KEY [*]DEFAULT gen_random_uuid(), name VARCHAR(100) NOT NULL, route VARCHAR(255), icon VARCHAR(50), parent_id UUID REFERENCES transactions(id) ON DELETE CASCADE, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP, created_by VARCHAR(255), updated_by VARCHAR(255) )"; expected "HASH, CONSTRAINT, COMMENT, UNIQUE, NOT NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE transactions ( id UUID PRIMARY KEY DEFAULT gen_random_uuid(), name VARCHAR(100) NOT NULL, route VARCHAR(255), icon VARCHAR(50), parent_id UUID REFERENCES transactions(id) ON DELETE CASCADE, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP, created_by VARCHAR(255), updated_by VARCHAR(255) ) [42001-240]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.getSyntaxError(DbException.java:261)
+	at org.h2.command.ParserBase.getSyntaxError(ParserBase.java:762)
+	at org.h2.command.ParserBase.read(ParserBase.java:369)
+	at org.h2.command.ParserBase.readIfMore(ParserBase.java:637)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:8927)
+	at org.h2.command.Parser.parseCreate(Parser.java:6483)
+	at org.h2.command.Parser.parsePrepared(Parser.java:648)
+	at org.h2.command.Parser.parse(Parser.java:584)
+	at org.h2.command.Parser.parse(Parser.java:564)
+	at org.h2.command.Parser.prepareCommand(Parser.java:487)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:647)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:563)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1160)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:261)
+	... 27 common frames omitted
+2026-09-27 10:30:27 [main] INFO  m.c.d.s.SmartLibraryApplication - Starting SmartLibraryApplication using Java 25.0.3 with PID 38804 (/home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core/target/classes started by estevaodimaca in /home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core)
+2026-09-27 10:30:27 [main] DEBUG m.c.d.s.SmartLibraryApplication - Running with Spring Boot v4.1.1, Spring v7.0.9
+2026-09-27 10:30:27 [main] INFO  m.c.d.s.SmartLibraryApplication - The following 1 profile is active: "dev"
+2026-09-27 10:30:27 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.3.Final
+2026-09-27 10:30:28 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-27 10:30:28 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 36 ms. Found 3 JPA repository interfaces.
+2026-09-27 10:30:28 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-09-27 10:30:28 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-27 10:30:28 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-27 10:30:28 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-27 10:30:28 [main] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 974 ms
+2026-09-27 10:30:28 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-09-27 10:30:28 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:smart_library_db user=SA
+2026-09-27 10:30:28 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-09-27 10:30:28 [main] WARN  o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #1 of file [/home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core/target/classes/data.sql]: INSERT INTO books (id, title, author, isbn, available_copies) VALUES ('123e4567-e89b-12d3-a456-426614174000', 'The Pragmatic Programmer', 'Andrew Hunt', '978-0201616224', 5)
+2026-09-27 10:30:28 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-09-27 10:30:28 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-09-27 10:30:28 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-09-27 10:30:28 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-09-27 10:30:28 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #1 of file [/home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core/target/classes/data.sql]: INSERT INTO books (id, title, author, isbn, available_copies) VALUES ('123e4567-e89b-12d3-a456-426614174000', 'The Pragmatic Programmer', 'Andrew Hunt', '978-0201616224', 5)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:977)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at mz.com.dimasoft.smartlibrary.SmartLibraryApplication.main(SmartLibraryApplication.java:19)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #1 of file [/home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core/target/classes/data.sql]: INSERT INTO books (id, title, author, isbn, available_copies) VALUES ('123e4567-e89b-12d3-a456-426614174000', 'The Pragmatic Programmer', 'Andrew Hunt', '978-0201616224', 5)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1815)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309)
+	... 10 common frames omitted
+Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of file [/home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core/target/classes/data.sql]: INSERT INTO books (id, title, author, isbn, available_copies) VALUES ('123e4567-e89b-12d3-a456-426614174000', 'The Pragmatic Programmer', 'Andrew Hunt', '978-0201616224', 5)
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:293)
+	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:254)
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:54)
+	at org.springframework.boot.jdbc.init.DataSourceScriptDatabaseInitializer.runScripts(DataSourceScriptDatabaseInitializer.java:87)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.runScripts(AbstractScriptDatabaseInitializer.java:159)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyScripts(AbstractScriptDatabaseInitializer.java:120)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyDataScripts(AbstractScriptDatabaseInitializer.java:113)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.initializeDatabase(AbstractScriptDatabaseInitializer.java:88)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.afterPropertiesSet(AbstractScriptDatabaseInitializer.java:77)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1811)
+	... 17 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "books" not found (this database is empty); SQL statement:
+INSERT INTO books (id, title, author, isbn, available_copies) VALUES ('123e4567-e89b-12d3-a456-426614174000', 'The Pragmatic Programmer', 'Andrew Hunt', '978-0201616224', 5) [42104-240]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:8036)
+	at org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:8020)
+	at org.h2.command.Parser.readTableOrView(Parser.java:7999)
+	at org.h2.command.Parser.readTableOrView(Parser.java:7961)
+	at org.h2.command.Parser.parseInsert(Parser.java:1524)
+	at org.h2.command.Parser.parsePrepared(Parser.java:701)
+	at org.h2.command.Parser.parse(Parser.java:584)
+	at org.h2.command.Parser.parse(Parser.java:559)
+	at org.h2.command.Parser.prepareCommand(Parser.java:487)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:647)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:563)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1160)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:261)
+	... 27 common frames omitted
+2026-09-27 10:31:05 [main] INFO  m.c.d.s.SmartLibraryApplication - Starting SmartLibraryApplication using Java 25.0.3 with PID 39000 (/home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core/target/classes started by estevaodimaca in /home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core)
+2026-09-27 10:31:05 [main] DEBUG m.c.d.s.SmartLibraryApplication - Running with Spring Boot v4.1.1, Spring v7.0.9
+2026-09-27 10:31:05 [main] INFO  m.c.d.s.SmartLibraryApplication - The following 1 profile is active: "dev"
+2026-09-27 10:31:05 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.3.Final
+2026-09-27 10:31:05 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-27 10:31:05 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 35 ms. Found 3 JPA repository interfaces.
+2026-09-27 10:31:06 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-09-27 10:31:06 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-27 10:31:06 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-27 10:31:06 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-27 10:31:06 [main] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 997 ms
+2026-09-27 10:31:06 [main] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-09-27 10:31:06 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-09-27 10:31:06 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-27 10:31:06 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-09-27 10:31:07 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:smart_library_db user=SA
+2026-09-27 10:31:07 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-09-27 10:31:07 [main] WARN  org.hibernate.orm.core - HHH000511: The 2.4.240 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 14.0.0. Check the community dialects project for available legacy versions.
+2026-09-27 10:31:07 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-09-27 10:31:07 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:smart_library_db]
+	Database driver: H2 JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 2.4.240
+	Default catalog/schema: smart_library_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-27 10:31:07 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-27 10:31:07 [main] DEBUG org.hibernate.SQL - 
+    create table books (
+        id uuid not null,
+        created_at timestamp(6) with time zone not null,
+        created_by varchar(255),
+        updated_at timestamp(6) with time zone,
+        updated_by varchar(255),
+        author varchar(255) not null,
+        available_copies integer not null,
+        isbn varchar(50) not null,
+        title varchar(255) not null,
+        primary key (id)
+    )
+2026-09-27 10:31:07 [main] DEBUG org.hibernate.SQL - 
+    create table fines (
+        id uuid not null,
+        created_at timestamp(6) with time zone not null,
+        created_by varchar(255),
+        updated_at timestamp(6) with time zone,
+        updated_by varchar(255),
+        amount numeric(10,2) not null,
+        days_late integer not null,
+        status varchar(255) not null check ((status in ('PENDING','PAID','FORGIVEN'))),
+        loan_id uuid not null,
+        user_id uuid not null,
+        primary key (id)
+    )
+2026-09-27 10:31:07 [main] DEBUG org.hibernate.SQL - 
+    create table loans (
+        id uuid not null,
+        created_at timestamp(6) with time zone not null,
+        created_by varchar(255),
+        updated_at timestamp(6) with time zone,
+        updated_by varchar(255),
+        checkout_date date not null,
+        due_date date not null,
+        return_date date,
+        status varchar(255) not null check ((status in ('PENDING','ACTIVE','RETURNED','OVERDUE'))),
+        book_id uuid not null,
+        user_id uuid not null,
+        primary key (id)
+    )
+2026-09-27 10:31:07 [main] DEBUG org.hibernate.SQL - 
+    create table profile_transactions (
+        profile_id uuid not null,
+        transaction_id uuid not null,
+        primary key (profile_id, transaction_id)
+    )
+2026-09-27 10:31:07 [main] DEBUG org.hibernate.SQL - 
+    create table profiles (
+        id uuid not null,
+        created_at timestamp(6) with time zone not null,
+        created_by varchar(255),
+        updated_at timestamp(6) with time zone,
+        updated_by varchar(255),
+        name varchar(255) not null,
+        primary key (id)
+    )
+2026-09-27 10:31:07 [main] DEBUG org.hibernate.SQL - 
+    create table transactions (
+        id uuid not null,
+        created_at timestamp(6) with time zone not null,
+        created_by varchar(255),
+        updated_at timestamp(6) with time zone,
+        updated_by varchar(255),
+        icon varchar(255),
+        name varchar(255) not null,
+        route varchar(255),
+        parent_id uuid,
+        primary key (id)
+    )
+2026-09-27 10:31:07 [main] DEBUG org.hibernate.SQL - 
+    create table user_profiles (
+        user_id uuid not null,
+        profile_id uuid not null,
+        primary key (user_id, profile_id)
+    )
+2026-09-27 10:31:07 [main] DEBUG org.hibernate.SQL - 
+    create table users (
+        id uuid not null,
+        created_at timestamp(6) with time zone not null,
+        created_by varchar(255),
+        updated_at timestamp(6) with time zone,
+        updated_by varchar(255),
+        active boolean not null,
+        email varchar(255) not null,
+        first_name varchar(255) not null,
+        has_active_fine boolean,
+        last_name varchar(255) not null,
+        password varchar(255) not null,
+        tax_id varchar(20) not null,
+        primary key (id)
+    )
+2026-09-27 10:31:07 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists books 
+       drop constraint if exists UKkibbepcitr0a3cpk3rfr7nihn
+2026-09-27 10:31:07 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists books 
+       add constraint UKkibbepcitr0a3cpk3rfr7nihn unique (isbn)
+2026-09-27 10:31:07 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists profiles 
+       drop constraint if exists UKhlbju8nhcn1ypii4dcfv46gpw
+2026-09-27 10:31:07 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists profiles 
+       add constraint UKhlbju8nhcn1ypii4dcfv46gpw unique (name)
+2026-09-27 10:31:07 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists users 
+       drop constraint if exists UK6dotkott2kjsp8vw4d0m25fb7
+2026-09-27 10:31:07 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists users 
+       add constraint UK6dotkott2kjsp8vw4d0m25fb7 unique (email)
+2026-09-27 10:31:07 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists users 
+       drop constraint if exists UKtb5xl1ncpt9amut4mf6movgvk
+2026-09-27 10:31:07 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists users 
+       add constraint UKtb5xl1ncpt9amut4mf6movgvk unique (tax_id)
+2026-09-27 10:31:07 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists fines 
+       add constraint FKpxdidln7gte3bgknqqhknl99h 
+       foreign key (loan_id) 
+       references loans
+2026-09-27 10:31:07 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists fines 
+       add constraint FK96m5dw0wvbckhnnwfeynue15y 
+       foreign key (user_id) 
+       references users
+2026-09-27 10:31:07 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists loans 
+       add constraint FKokwvlrv6o4i4h3le3bwhe6kie 
+       foreign key (book_id) 
+       references books
+2026-09-27 10:31:07 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists loans 
+       add constraint FK6xxlcjc0rqtn5nq28vjnx5t9d 
+       foreign key (user_id) 
+       references users
+2026-09-27 10:31:07 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists profile_transactions 
+       add constraint FKdq78tsk31lbihb0h0ybdhcc05 
+       foreign key (transaction_id) 
+       references transactions
+2026-09-27 10:31:07 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists profile_transactions 
+       add constraint FK9b3jk3jpl9fhkpu0nn1cjjx4n 
+       foreign key (profile_id) 
+       references profiles
+2026-09-27 10:31:07 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists transactions 
+       add constraint FK76hynkv9ne080xtfyi8ig6hlf 
+       foreign key (parent_id) 
+       references transactions
+2026-09-27 10:31:07 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists user_profiles 
+       add constraint FKd6tsq30eqvjqfo42065irbigt 
+       foreign key (profile_id) 
+       references profiles
+2026-09-27 10:31:07 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists user_profiles 
+       add constraint FKjcad5nfve11khsnpwj1mv8frj 
+       foreign key (user_id) 
+       references users
+2026-09-27 10:31:07 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-27 10:31:08 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-27 10:31:08 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-27 10:31:08 [main] WARN  o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #1 of file [/home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core/target/classes/data.sql]: INSERT INTO books (id, title, author, isbn, available_copies) VALUES ('123e4567-e89b-12d3-a456-426614174000', 'The Pragmatic Programmer', 'Andrew Hunt', '978-0201616224', 5)
+2026-09-27 10:31:08 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-09-27 10:31:08 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-09-27 10:31:08 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-09-27 10:31:08 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-09-27 10:31:08 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-09-27 10:31:08 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceInitializationAutoConfiguration.class]: Failed to execute SQL script statement #1 of file [/home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core/target/classes/data.sql]: INSERT INTO books (id, title, author, isbn, available_copies) VALUES ('123e4567-e89b-12d3-a456-426614174000', 'The Pragmatic Programmer', 'Andrew Hunt', '978-0201616224', 5)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1815)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1225)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1191)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1121)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:994)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at mz.com.dimasoft.smartlibrary.SmartLibraryApplication.main(SmartLibraryApplication.java:19)
+Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of file [/home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core/target/classes/data.sql]: INSERT INTO books (id, title, author, isbn, available_copies) VALUES ('123e4567-e89b-12d3-a456-426614174000', 'The Pragmatic Programmer', 'Andrew Hunt', '978-0201616224', 5)
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:293)
+	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:254)
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:54)
+	at org.springframework.boot.jdbc.init.DataSourceScriptDatabaseInitializer.runScripts(DataSourceScriptDatabaseInitializer.java:87)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.runScripts(AbstractScriptDatabaseInitializer.java:159)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyScripts(AbstractScriptDatabaseInitializer.java:120)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyDataScripts(AbstractScriptDatabaseInitializer.java:113)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.initializeDatabase(AbstractScriptDatabaseInitializer.java:88)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.afterPropertiesSet(AbstractScriptDatabaseInitializer.java:77)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1811)
+	... 18 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLIntegrityConstraintViolationException: NULL not allowed for column "created_at"; SQL statement:
+INSERT INTO books (id, title, author, isbn, available_copies) VALUES ('123e4567-e89b-12d3-a456-426614174000', 'The Pragmatic Programmer', 'Andrew Hunt', '978-0201616224', 5) [23502-240]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:520)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.table.Column.validateConvertUpdateSequence(Column.java:406)
+	at org.h2.table.Table.convertInsertRow(Table.java:948)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:167)
+	at org.h2.command.dml.Insert.update(Insert.java:135)
+	at org.h2.command.dml.DataChangeStatement.update(DataChangeStatement.java:77)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:139)
+	at org.h2.command.Command.executeUpdate(Command.java:306)
+	at org.h2.command.Command.executeUpdate(Command.java:250)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:262)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:261)
+	... 28 common frames omitted
+2026-09-27 10:31:39 [main] INFO  m.c.d.s.SmartLibraryApplication - Starting SmartLibraryApplication using Java 25.0.3 with PID 39189 (/home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core/target/classes started by estevaodimaca in /home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core)
+2026-09-27 10:31:39 [main] DEBUG m.c.d.s.SmartLibraryApplication - Running with Spring Boot v4.1.1, Spring v7.0.9
+2026-09-27 10:31:39 [main] INFO  m.c.d.s.SmartLibraryApplication - The following 1 profile is active: "dev"
+2026-09-27 10:31:39 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.3.Final
+2026-09-27 10:31:39 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-27 10:31:39 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 36 ms. Found 3 JPA repository interfaces.
+2026-09-27 10:31:40 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-09-27 10:31:40 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-27 10:31:40 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-27 10:31:40 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-27 10:31:40 [main] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 990 ms
+2026-09-27 10:31:40 [main] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-09-27 10:31:40 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-09-27 10:31:40 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-27 10:31:40 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-09-27 10:31:41 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:smart_library_db user=SA
+2026-09-27 10:31:41 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-09-27 10:31:41 [main] WARN  org.hibernate.orm.core - HHH000511: The 2.4.240 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 14.0.0. Check the community dialects project for available legacy versions.
+2026-09-27 10:31:41 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-09-27 10:31:41 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:smart_library_db]
+	Database driver: H2 JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 2.4.240
+	Default catalog/schema: smart_library_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-27 10:31:41 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-27 10:31:41 [main] DEBUG org.hibernate.SQL - 
+    create table books (
+        id uuid not null,
+        created_at timestamp(6) with time zone not null,
+        created_by varchar(255),
+        updated_at timestamp(6) with time zone,
+        updated_by varchar(255),
+        author varchar(255) not null,
+        available_copies integer not null,
+        isbn varchar(50) not null,
+        title varchar(255) not null,
+        primary key (id)
+    )
+2026-09-27 10:31:41 [main] DEBUG org.hibernate.SQL - 
+    create table fines (
+        id uuid not null,
+        created_at timestamp(6) with time zone not null,
+        created_by varchar(255),
+        updated_at timestamp(6) with time zone,
+        updated_by varchar(255),
+        amount numeric(10,2) not null,
+        days_late integer not null,
+        status varchar(255) not null check ((status in ('PENDING','PAID','FORGIVEN'))),
+        loan_id uuid not null,
+        user_id uuid not null,
+        primary key (id)
+    )
+2026-09-27 10:31:41 [main] DEBUG org.hibernate.SQL - 
+    create table loans (
+        id uuid not null,
+        created_at timestamp(6) with time zone not null,
+        created_by varchar(255),
+        updated_at timestamp(6) with time zone,
+        updated_by varchar(255),
+        checkout_date date not null,
+        due_date date not null,
+        return_date date,
+        status varchar(255) not null check ((status in ('PENDING','ACTIVE','RETURNED','OVERDUE'))),
+        book_id uuid not null,
+        user_id uuid not null,
+        primary key (id)
+    )
+2026-09-27 10:31:41 [main] DEBUG org.hibernate.SQL - 
+    create table profile_transactions (
+        profile_id uuid not null,
+        transaction_id uuid not null,
+        primary key (profile_id, transaction_id)
+    )
+2026-09-27 10:31:41 [main] DEBUG org.hibernate.SQL - 
+    create table profiles (
+        id uuid not null,
+        created_at timestamp(6) with time zone not null,
+        created_by varchar(255),
+        updated_at timestamp(6) with time zone,
+        updated_by varchar(255),
+        name varchar(255) not null,
+        primary key (id)
+    )
+2026-09-27 10:31:41 [main] DEBUG org.hibernate.SQL - 
+    create table transactions (
+        id uuid not null,
+        created_at timestamp(6) with time zone not null,
+        created_by varchar(255),
+        updated_at timestamp(6) with time zone,
+        updated_by varchar(255),
+        icon varchar(255),
+        name varchar(255) not null,
+        route varchar(255),
+        parent_id uuid,
+        primary key (id)
+    )
+2026-09-27 10:31:41 [main] DEBUG org.hibernate.SQL - 
+    create table user_profiles (
+        user_id uuid not null,
+        profile_id uuid not null,
+        primary key (user_id, profile_id)
+    )
+2026-09-27 10:31:41 [main] DEBUG org.hibernate.SQL - 
+    create table users (
+        id uuid not null,
+        created_at timestamp(6) with time zone not null,
+        created_by varchar(255),
+        updated_at timestamp(6) with time zone,
+        updated_by varchar(255),
+        active boolean not null,
+        email varchar(255) not null,
+        first_name varchar(255) not null,
+        has_active_fine boolean,
+        last_name varchar(255) not null,
+        password varchar(255) not null,
+        tax_id varchar(20) not null,
+        primary key (id)
+    )
+2026-09-27 10:31:41 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists books 
+       drop constraint if exists UKkibbepcitr0a3cpk3rfr7nihn
+2026-09-27 10:31:41 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists books 
+       add constraint UKkibbepcitr0a3cpk3rfr7nihn unique (isbn)
+2026-09-27 10:31:41 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists profiles 
+       drop constraint if exists UKhlbju8nhcn1ypii4dcfv46gpw
+2026-09-27 10:31:41 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists profiles 
+       add constraint UKhlbju8nhcn1ypii4dcfv46gpw unique (name)
+2026-09-27 10:31:41 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists users 
+       drop constraint if exists UK6dotkott2kjsp8vw4d0m25fb7
+2026-09-27 10:31:41 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists users 
+       add constraint UK6dotkott2kjsp8vw4d0m25fb7 unique (email)
+2026-09-27 10:31:41 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists users 
+       drop constraint if exists UKtb5xl1ncpt9amut4mf6movgvk
+2026-09-27 10:31:41 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists users 
+       add constraint UKtb5xl1ncpt9amut4mf6movgvk unique (tax_id)
+2026-09-27 10:31:41 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists fines 
+       add constraint FKpxdidln7gte3bgknqqhknl99h 
+       foreign key (loan_id) 
+       references loans
+2026-09-27 10:31:41 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists fines 
+       add constraint FK96m5dw0wvbckhnnwfeynue15y 
+       foreign key (user_id) 
+       references users
+2026-09-27 10:31:41 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists loans 
+       add constraint FKokwvlrv6o4i4h3le3bwhe6kie 
+       foreign key (book_id) 
+       references books
+2026-09-27 10:31:41 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists loans 
+       add constraint FK6xxlcjc0rqtn5nq28vjnx5t9d 
+       foreign key (user_id) 
+       references users
+2026-09-27 10:31:41 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists profile_transactions 
+       add constraint FKdq78tsk31lbihb0h0ybdhcc05 
+       foreign key (transaction_id) 
+       references transactions
+2026-09-27 10:31:41 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists profile_transactions 
+       add constraint FK9b3jk3jpl9fhkpu0nn1cjjx4n 
+       foreign key (profile_id) 
+       references profiles
+2026-09-27 10:31:41 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists transactions 
+       add constraint FK76hynkv9ne080xtfyi8ig6hlf 
+       foreign key (parent_id) 
+       references transactions
+2026-09-27 10:31:41 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists user_profiles 
+       add constraint FKd6tsq30eqvjqfo42065irbigt 
+       foreign key (profile_id) 
+       references profiles
+2026-09-27 10:31:41 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists user_profiles 
+       add constraint FKjcad5nfve11khsnpwj1mv8frj 
+       foreign key (user_id) 
+       references users
+2026-09-27 10:31:41 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-27 10:31:41 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-27 10:31:42 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-27 10:31:42 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-09-27 10:31:42 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2026-09-27 10:31:42 [main] INFO  m.c.d.s.SmartLibraryApplication - Started SmartLibraryApplication in 3.62 seconds (process running for 3.861)
+2026-09-27 10:36:20 [main] INFO  m.c.d.s.SmartLibraryApplication - Starting SmartLibraryApplication using Java 25.0.3 with PID 39792 (/home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core/target/classes started by estevaodimaca in /home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core)
+2026-09-27 10:36:20 [main] DEBUG m.c.d.s.SmartLibraryApplication - Running with Spring Boot v4.1.1, Spring v7.0.9
+2026-09-27 10:36:20 [main] INFO  m.c.d.s.SmartLibraryApplication - The following 1 profile is active: "dev"
+2026-09-27 10:36:21 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.3.Final
+2026-09-27 10:36:21 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-27 10:36:21 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 34 ms. Found 3 JPA repository interfaces.
+2026-09-27 10:36:21 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-09-27 10:36:21 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-27 10:36:21 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-27 10:36:21 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-27 10:36:21 [main] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 953 ms
+2026-09-27 10:36:22 [main] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-09-27 10:36:22 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-09-27 10:36:22 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-27 10:36:22 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-09-27 10:36:22 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2411b935
+2026-09-27 10:36:22 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-09-27 10:36:22 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-09-27 10:36:22 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/smart_library_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.4
+	Default catalog/schema: smart_library_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-27 10:36:23 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-27 10:36:23 [main] DEBUG org.hibernate.SQL - 
+    create table books (
+        id uuid not null,
+        created_at timestamp(6) with time zone not null,
+        created_by varchar(255),
+        updated_at timestamp(6) with time zone,
+        updated_by varchar(255),
+        author varchar(255) not null,
+        available_copies integer not null,
+        isbn varchar(50) not null,
+        title varchar(255) not null,
+        primary key (id)
+    )
+2026-09-27 10:36:23 [main] DEBUG org.hibernate.SQL - 
+    create table fines (
+        id uuid not null,
+        created_at timestamp(6) with time zone not null,
+        created_by varchar(255),
+        updated_at timestamp(6) with time zone,
+        updated_by varchar(255),
+        amount numeric(10,2) not null,
+        days_late integer not null,
+        status varchar(255) not null check ((status in ('PENDING','PAID','FORGIVEN'))),
+        loan_id uuid not null,
+        user_id uuid not null,
+        primary key (id)
+    )
+2026-09-27 10:36:23 [main] DEBUG org.hibernate.SQL - 
+    create table loans (
+        id uuid not null,
+        created_at timestamp(6) with time zone not null,
+        created_by varchar(255),
+        updated_at timestamp(6) with time zone,
+        updated_by varchar(255),
+        checkout_date date not null,
+        due_date date not null,
+        return_date date,
+        status varchar(255) not null check ((status in ('PENDING','ACTIVE','RETURNED','OVERDUE'))),
+        book_id uuid not null,
+        user_id uuid not null,
+        primary key (id)
+    )
+2026-09-27 10:36:23 [main] DEBUG org.hibernate.SQL - 
+    create table profile_transactions (
+        profile_id uuid not null,
+        transaction_id uuid not null,
+        primary key (profile_id, transaction_id)
+    )
+2026-09-27 10:36:23 [main] DEBUG org.hibernate.SQL - 
+    create table profiles (
+        id uuid not null,
+        created_at timestamp(6) with time zone not null,
+        created_by varchar(255),
+        updated_at timestamp(6) with time zone,
+        updated_by varchar(255),
+        name varchar(255) not null,
+        primary key (id)
+    )
+2026-09-27 10:36:24 [main] DEBUG org.hibernate.SQL - 
+    create table transactions (
+        id uuid not null,
+        created_at timestamp(6) with time zone not null,
+        created_by varchar(255),
+        updated_at timestamp(6) with time zone,
+        updated_by varchar(255),
+        icon varchar(255),
+        name varchar(255) not null,
+        route varchar(255),
+        parent_id uuid,
+        primary key (id)
+    )
+2026-09-27 10:36:24 [main] DEBUG org.hibernate.SQL - 
+    create table user_profiles (
+        user_id uuid not null,
+        profile_id uuid not null,
+        primary key (user_id, profile_id)
+    )
+2026-09-27 10:36:24 [main] DEBUG org.hibernate.SQL - 
+    create table users (
+        id uuid not null,
+        created_at timestamp(6) with time zone not null,
+        created_by varchar(255),
+        updated_at timestamp(6) with time zone,
+        updated_by varchar(255),
+        active boolean not null,
+        email varchar(255) not null,
+        first_name varchar(255) not null,
+        has_active_fine boolean,
+        last_name varchar(255) not null,
+        password varchar(255) not null,
+        tax_id varchar(20) not null,
+        primary key (id)
+    )
+2026-09-27 10:36:24 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists books 
+       drop constraint if exists UKkibbepcitr0a3cpk3rfr7nihn
+2026-09-27 10:36:24 [main] WARN  org.hibernate.orm.jdbc.warn - HHH000247: ErrorCode: 0, SQLState: 00000
+2026-09-27 10:36:24 [main] WARN  org.hibernate.orm.jdbc.warn - constraint "ukkibbepcitr0a3cpk3rfr7nihn" of relation "books" does not exist, skipping
+2026-09-27 10:36:24 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists books 
+       add constraint UKkibbepcitr0a3cpk3rfr7nihn unique (isbn)
+2026-09-27 10:36:25 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists profiles 
+       drop constraint if exists UKhlbju8nhcn1ypii4dcfv46gpw
+2026-09-27 10:36:25 [main] WARN  org.hibernate.orm.jdbc.warn - HHH000247: ErrorCode: 0, SQLState: 00000
+2026-09-27 10:36:25 [main] WARN  org.hibernate.orm.jdbc.warn - constraint "ukhlbju8nhcn1ypii4dcfv46gpw" of relation "profiles" does not exist, skipping
+2026-09-27 10:36:25 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists profiles 
+       add constraint UKhlbju8nhcn1ypii4dcfv46gpw unique (name)
+2026-09-27 10:36:26 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists users 
+       drop constraint if exists UK6dotkott2kjsp8vw4d0m25fb7
+2026-09-27 10:36:26 [main] WARN  org.hibernate.orm.jdbc.warn - HHH000247: ErrorCode: 0, SQLState: 00000
+2026-09-27 10:36:26 [main] WARN  org.hibernate.orm.jdbc.warn - constraint "uk6dotkott2kjsp8vw4d0m25fb7" of relation "users" does not exist, skipping
+2026-09-27 10:36:26 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists users 
+       add constraint UK6dotkott2kjsp8vw4d0m25fb7 unique (email)
+2026-09-27 10:36:26 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists users 
+       drop constraint if exists UKtb5xl1ncpt9amut4mf6movgvk
+2026-09-27 10:36:26 [main] WARN  org.hibernate.orm.jdbc.warn - HHH000247: ErrorCode: 0, SQLState: 00000
+2026-09-27 10:36:26 [main] WARN  org.hibernate.orm.jdbc.warn - constraint "uktb5xl1ncpt9amut4mf6movgvk" of relation "users" does not exist, skipping
+2026-09-27 10:36:26 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists users 
+       add constraint UKtb5xl1ncpt9amut4mf6movgvk unique (tax_id)
+2026-09-27 10:36:26 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists fines 
+       add constraint FKpxdidln7gte3bgknqqhknl99h 
+       foreign key (loan_id) 
+       references loans
+2026-09-27 10:36:26 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists fines 
+       add constraint FK96m5dw0wvbckhnnwfeynue15y 
+       foreign key (user_id) 
+       references users
+2026-09-27 10:36:26 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists loans 
+       add constraint FKokwvlrv6o4i4h3le3bwhe6kie 
+       foreign key (book_id) 
+       references books
+2026-09-27 10:36:26 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists loans 
+       add constraint FK6xxlcjc0rqtn5nq28vjnx5t9d 
+       foreign key (user_id) 
+       references users
+2026-09-27 10:36:26 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists profile_transactions 
+       add constraint FKdq78tsk31lbihb0h0ybdhcc05 
+       foreign key (transaction_id) 
+       references transactions
+2026-09-27 10:36:26 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists profile_transactions 
+       add constraint FK9b3jk3jpl9fhkpu0nn1cjjx4n 
+       foreign key (profile_id) 
+       references profiles
+2026-09-27 10:36:26 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists transactions 
+       add constraint FK76hynkv9ne080xtfyi8ig6hlf 
+       foreign key (parent_id) 
+       references transactions
+2026-09-27 10:36:26 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists user_profiles 
+       add constraint FKd6tsq30eqvjqfo42065irbigt 
+       foreign key (profile_id) 
+       references profiles
+2026-09-27 10:36:26 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists user_profiles 
+       add constraint FKjcad5nfve11khsnpwj1mv8frj 
+       foreign key (user_id) 
+       references users
+2026-09-27 10:36:26 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-27 10:36:26 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-27 10:36:26 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-27 10:36:27 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-09-27 10:36:27 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2026-09-27 10:36:27 [main] INFO  m.c.d.s.SmartLibraryApplication - Started SmartLibraryApplication in 6.763 seconds (process running for 7.017)
+2026-09-27 11:13:34 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-27 11:13:34 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-09-27 11:13:34 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-09-27 11:13:34 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        b1_0.id,
+        b1_0.author,
+        b1_0.available_copies,
+        b1_0.created_at,
+        b1_0.created_by,
+        b1_0.isbn,
+        b1_0.title,
+        b1_0.updated_at,
+        b1_0.updated_by 
+    from
+        books b1_0
+2026-09-27 11:14:36 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        b1_0.id,
+        b1_0.author,
+        b1_0.available_copies,
+        b1_0.created_at,
+        b1_0.created_by,
+        b1_0.isbn,
+        b1_0.title,
+        b1_0.updated_at,
+        b1_0.updated_by 
+    from
+        books b1_0
+2026-09-27 11:32:24 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        b1_0.id,
+        b1_0.author,
+        b1_0.available_copies,
+        b1_0.created_at,
+        b1_0.created_by,
+        b1_0.isbn,
+        b1_0.title,
+        b1_0.updated_at,
+        b1_0.updated_by 
+    from
+        books b1_0
+2026-09-27 11:32:43 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        b1_0.id,
+        b1_0.author,
+        b1_0.available_copies,
+        b1_0.created_at,
+        b1_0.created_by,
+        b1_0.isbn,
+        b1_0.title,
+        b1_0.updated_at,
+        b1_0.updated_by 
+    from
+        books b1_0
+2026-09-27 11:35:25 [main] INFO  m.c.d.s.SmartLibraryApplication - Starting SmartLibraryApplication using Java 25.0.3 with PID 44487 (/home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core/target/classes started by estevaodimaca in /home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core)
+2026-09-27 11:35:25 [main] DEBUG m.c.d.s.SmartLibraryApplication - Running with Spring Boot v4.1.1, Spring v7.0.9
+2026-09-27 11:35:25 [main] INFO  m.c.d.s.SmartLibraryApplication - The following 1 profile is active: "dev"
+2026-09-27 11:35:25 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.3.Final
+2026-09-27 11:35:25 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-27 11:35:25 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 36 ms. Found 3 JPA repository interfaces.
+2026-09-27 11:35:26 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-09-27 11:35:26 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-27 11:35:26 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-27 11:35:26 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-27 11:35:26 [main] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1009 ms
+2026-09-27 11:35:26 [main] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-09-27 11:35:26 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-09-27 11:35:26 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-27 11:35:26 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-09-27 11:35:27 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7337bd2e
+2026-09-27 11:35:27 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-09-27 11:35:27 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-09-27 11:35:27 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/smart_library_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.4
+	Default catalog/schema: smart_library_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-27 11:35:28 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-27 11:35:28 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-27 11:35:28 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-27 11:35:28 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-27 11:35:28 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-09-27 11:35:28 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2026-09-27 11:35:28 [main] INFO  m.c.d.s.SmartLibraryApplication - Started SmartLibraryApplication in 3.702 seconds (process running for 3.966)
+2026-09-27 11:36:40 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-27 11:36:40 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-09-27 11:36:40 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-09-27 11:36:40 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        b1_0.id,
+        b1_0.author,
+        b1_0.available_copies,
+        b1_0.created_at,
+        b1_0.created_by,
+        b1_0.isbn,
+        b1_0.title,
+        b1_0.updated_at,
+        b1_0.updated_by 
+    from
+        books b1_0
+2026-09-27 11:41:09 [main] INFO  m.c.d.s.SmartLibraryApplication - Starting SmartLibraryApplication using Java 25.0.3 with PID 45043 (/home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core/target/classes started by estevaodimaca in /home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core)
+2026-09-27 11:41:09 [main] DEBUG m.c.d.s.SmartLibraryApplication - Running with Spring Boot v4.1.1, Spring v7.0.9
+2026-09-27 11:41:09 [main] INFO  m.c.d.s.SmartLibraryApplication - The following 1 profile is active: "dev"
+2026-09-27 11:41:09 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.3.Final
+2026-09-27 11:41:09 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-27 11:41:09 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 36 ms. Found 3 JPA repository interfaces.
+2026-09-27 11:41:10 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-09-27 11:41:10 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-27 11:41:10 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-27 11:41:10 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-27 11:41:10 [main] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 984 ms
+2026-09-27 11:41:10 [main] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-09-27 11:41:10 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-09-27 11:41:10 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-27 11:41:10 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-09-27 11:41:11 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2411b935
+2026-09-27 11:41:11 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-09-27 11:41:11 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-09-27 11:41:11 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/smart_library_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.4
+	Default catalog/schema: smart_library_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-27 11:41:12 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-27 11:41:12 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-27 11:41:12 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-27 11:41:12 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-27 11:41:12 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-09-27 11:41:12 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2026-09-27 11:41:12 [main] INFO  m.c.d.s.SmartLibraryApplication - Started SmartLibraryApplication in 3.744 seconds (process running for 3.98)
+2026-09-27 12:33:00 [main] INFO  m.c.d.s.SmartLibraryApplication - Starting SmartLibraryApplication using Java 25.0.3 with PID 48567 (/home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core/target/classes started by estevaodimaca in /home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core)
+2026-09-27 12:33:00 [main] DEBUG m.c.d.s.SmartLibraryApplication - Running with Spring Boot v4.1.1, Spring v7.0.9
+2026-09-27 12:33:00 [main] INFO  m.c.d.s.SmartLibraryApplication - The following 1 profile is active: "dev"
+2026-09-27 12:33:00 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.3.Final
+2026-09-27 12:33:00 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-27 12:33:00 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 33 ms. Found 3 JPA repository interfaces.
+2026-09-27 12:33:01 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-09-27 12:33:01 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-27 12:33:01 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-27 12:33:01 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-27 12:33:01 [main] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 927 ms
+2026-09-27 12:33:01 [main] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-09-27 12:33:01 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-09-27 12:33:01 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-27 12:33:01 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-09-27 12:33:02 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2411b935
+2026-09-27 12:33:02 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-09-27 12:33:02 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-09-27 12:33:02 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/smart_library_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.4
+	Default catalog/schema: smart_library_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-27 12:33:02 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-27 12:33:03 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-27 12:33:03 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-27 12:33:03 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-27 12:33:03 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-09-27 12:33:03 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2026-09-27 12:33:03 [main] INFO  m.c.d.s.SmartLibraryApplication - Started SmartLibraryApplication in 3.566 seconds (process running for 3.798)

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- Define a pasta e os nomes dos arquivos de log -->
+    <property name="LOGS" value="./logs" />
+
+    <!-- Appender para exibir os logs no Console (Terminal) -->
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</Pattern>
+        </layout>
+    </appender>
+
+    <!-- Appender para salvar os logs em Arquivo (Rolling File) conforme exigido na arquitetura -->
+    <appender name="RollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGS}/smart-library.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</Pattern>
+        </encoder>
+
+        <!-- Política de Rotação: Cria um novo arquivo todos os dias -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- Padrão do nome do arquivo compactado -->
+            <fileNamePattern>${LOGS}/archived/smart-library-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- Mantém os arquivos de log dos últimos 30 dias -->
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <!-- Configuração para os pacotes da DimaSoft -->
+    <logger name="mz.com.dimasoft.smartlibrary" level="trace" additivity="false">
+        <appender-ref ref="RollingFile" />
+        <appender-ref ref="Console" />
+    </logger>
+
+    <!-- Configuração Root (Para o resto do Spring) -->
+    <root level="info">
+        <appender-ref ref="RollingFile" />
+        <appender-ref ref="Console" />
+    </root>
+
+</configuration>

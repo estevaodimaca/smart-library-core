@@ -1,0 +1,27 @@
+# Maven target directory
+/target/
+
+# Spring Boot logs
+/logs/
+*.log
+
+# Eclipse / STS metadata
+.metadata
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA metadata
+.idea/
+*.iml
+*.iws
+
+# NetBeans
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+
+# OS files
+.DS_Store
+Thumbs.db

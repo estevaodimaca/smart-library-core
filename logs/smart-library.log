@@ -1,0 +1,2018 @@
+2026-10-01 09:26:52 [main] INFO  m.c.d.s.SmartLibraryApplication - Starting SmartLibraryApplication using Java 25.0.3 with PID 31716 (/home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core/target/classes started by estevaodimaca in /home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core)
+2026-10-01 09:26:52 [main] DEBUG m.c.d.s.SmartLibraryApplication - Running with Spring Boot v4.1.1, Spring v7.0.9
+2026-10-01 09:26:52 [main] INFO  m.c.d.s.SmartLibraryApplication - The following 1 profile is active: "dev"
+2026-10-01 09:26:52 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.3.Final
+2026-10-01 09:26:52 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-01 09:26:52 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 34 ms. Found 5 JPA repository interfaces.
+2026-10-01 09:26:53 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-10-01 09:26:53 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-10-01 09:26:53 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-01 09:26:53 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-10-01 09:26:53 [main] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 865 ms
+2026-10-01 09:26:53 [main] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-01 09:26:53 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-10-01 09:26:53 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-01 09:26:53 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-01 09:26:54 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4caf875c
+2026-10-01 09:26:54 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-01 09:26:54 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-10-01 09:26:54 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/smart_library_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.4
+	Default catalog/schema: smart_library_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-01 09:26:54 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-01 09:26:55 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-01 09:26:55 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-01 09:26:55 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-01 09:26:55 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-10-01 09:26:55 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2026-10-01 09:26:55 [main] INFO  m.c.d.s.SmartLibraryApplication - Started SmartLibraryApplication in 3.975 seconds (process running for 4.167)
+2026-10-01 09:43:19 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-01 09:43:19 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-10-01 09:43:19 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-10-01 09:43:19 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        b1_0.id,
+        b1_0.author,
+        b1_0.available_copies,
+        b1_0.created_at,
+        b1_0.created_by,
+        b1_0.isbn,
+        b1_0.title,
+        b1_0.updated_at,
+        b1_0.updated_by 
+    from
+        books b1_0
+2026-10-01 09:44:23 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.active,
+        u1_0.created_at,
+        u1_0.created_by,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.has_active_fine,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.tax_id,
+        u1_0.updated_at,
+        u1_0.updated_by 
+    from
+        users u1_0
+2026-10-01 09:44:23 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.user_id,
+        p1_1.id,
+        p1_1.created_at,
+        p1_1.created_by,
+        p1_1.name,
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by,
+        p1_1.updated_at,
+        p1_1.updated_by 
+    from
+        user_profiles p1_0 
+    join
+        profiles p1_1 
+            on p1_1.id=p1_0.profile_id 
+    left join
+        profile_transactions t1_0 
+            on p1_1.id=t1_0.profile_id 
+    left join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        p1_0.user_id=?
+2026-10-01 09:44:23 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.user_id,
+        p1_1.id,
+        p1_1.created_at,
+        p1_1.created_by,
+        p1_1.name,
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by,
+        p1_1.updated_at,
+        p1_1.updated_by 
+    from
+        user_profiles p1_0 
+    join
+        profiles p1_1 
+            on p1_1.id=p1_0.profile_id 
+    left join
+        profile_transactions t1_0 
+            on p1_1.id=t1_0.profile_id 
+    left join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        p1_0.user_id=?
+2026-10-01 09:44:23 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.user_id,
+        p1_1.id,
+        p1_1.created_at,
+        p1_1.created_by,
+        p1_1.name,
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by,
+        p1_1.updated_at,
+        p1_1.updated_by 
+    from
+        user_profiles p1_0 
+    join
+        profiles p1_1 
+            on p1_1.id=p1_0.profile_id 
+    left join
+        profile_transactions t1_0 
+            on p1_1.id=t1_0.profile_id 
+    left join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        p1_0.user_id=?
+2026-10-01 09:44:23 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.user_id,
+        p1_1.id,
+        p1_1.created_at,
+        p1_1.created_by,
+        p1_1.name,
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by,
+        p1_1.updated_at,
+        p1_1.updated_by 
+    from
+        user_profiles p1_0 
+    join
+        profiles p1_1 
+            on p1_1.id=p1_0.profile_id 
+    left join
+        profile_transactions t1_0 
+            on p1_1.id=t1_0.profile_id 
+    left join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        p1_0.user_id=?
+2026-10-01 09:44:23 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.user_id,
+        p1_1.id,
+        p1_1.created_at,
+        p1_1.created_by,
+        p1_1.name,
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by,
+        p1_1.updated_at,
+        p1_1.updated_by 
+    from
+        user_profiles p1_0 
+    join
+        profiles p1_1 
+            on p1_1.id=p1_0.profile_id 
+    left join
+        profile_transactions t1_0 
+            on p1_1.id=t1_0.profile_id 
+    left join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        p1_0.user_id=?
+2026-10-01 13:05:44 [main] INFO  m.c.d.s.SmartLibraryApplication - Starting SmartLibraryApplication using Java 25.0.3 with PID 30382 (/home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core/target/classes started by estevaodimaca in /home/estevaodimaca/Documents/desenvolvimento/workspaces/antigravity-IDE/bibliotecainstitucional/smart-library/smart-library-core)
+2026-10-01 13:05:44 [main] DEBUG m.c.d.s.SmartLibraryApplication - Running with Spring Boot v4.1.1, Spring v7.0.9
+2026-10-01 13:05:44 [main] INFO  m.c.d.s.SmartLibraryApplication - The following 1 profile is active: "dev"
+2026-10-01 13:05:45 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.3.Final
+2026-10-01 13:05:47 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-01 13:05:47 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 84 ms. Found 5 JPA repository interfaces.
+2026-10-01 13:05:48 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-10-01 13:05:48 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-10-01 13:05:48 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-01 13:05:48 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-10-01 13:05:48 [main] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 3980 ms
+2026-10-01 13:05:49 [main] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-01 13:05:49 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-10-01 13:05:50 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-01 13:05:50 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-01 13:05:50 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2f262474
+2026-10-01 13:05:50 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-01 13:05:50 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-10-01 13:05:50 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/smart_library_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.4
+	Default catalog/schema: smart_library_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-01 13:05:51 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-01 13:05:51 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-01 13:05:51 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-01 13:05:52 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-01 13:05:52 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-10-01 13:05:52 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2026-10-01 13:05:52 [main] INFO  m.c.d.s.SmartLibraryApplication - Started SmartLibraryApplication in 8.674 seconds (process running for 9.288)
+2026-10-01 13:05:54 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-01 13:05:54 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-10-01 13:05:54 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-10-01 13:05:54 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.id,
+        t1_0.created_at,
+        t1_0.created_by,
+        t1_0.icon,
+        t1_0.name,
+        t1_0.parent_id,
+        t1_0.route,
+        t1_0.updated_at,
+        t1_0.updated_by 
+    from
+        transactions t1_0
+2026-10-01 13:05:59 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.id,
+        t1_0.created_at,
+        t1_0.created_by,
+        t1_0.icon,
+        t1_0.name,
+        t1_0.parent_id,
+        t1_0.route,
+        t1_0.updated_at,
+        t1_0.updated_by 
+    from
+        transactions t1_0
+2026-10-01 13:06:01 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.active,
+        u1_0.created_at,
+        u1_0.created_by,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.has_active_fine,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.tax_id,
+        u1_0.updated_at,
+        u1_0.updated_by 
+    from
+        users u1_0
+2026-10-01 13:06:01 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.created_by,
+        p1_0.name,
+        p1_0.updated_at,
+        p1_0.updated_by 
+    from
+        profiles p1_0
+2026-10-01 13:06:01 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.user_id,
+        p1_1.id,
+        p1_1.created_at,
+        p1_1.created_by,
+        p1_1.name,
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by,
+        p1_1.updated_at,
+        p1_1.updated_by 
+    from
+        user_profiles p1_0 
+    join
+        profiles p1_1 
+            on p1_1.id=p1_0.profile_id 
+    left join
+        profile_transactions t1_0 
+            on p1_1.id=t1_0.profile_id 
+    left join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        p1_0.user_id=?
+2026-10-01 13:06:01 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by 
+    from
+        profile_transactions t1_0 
+    join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        t1_0.profile_id=?
+2026-10-01 13:06:01 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by 
+    from
+        profile_transactions t1_0 
+    join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        t1_0.profile_id=?
+2026-10-01 13:06:01 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by 
+    from
+        profile_transactions t1_0 
+    join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        t1_0.profile_id=?
+2026-10-01 13:06:01 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.user_id,
+        p1_1.id,
+        p1_1.created_at,
+        p1_1.created_by,
+        p1_1.name,
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by,
+        p1_1.updated_at,
+        p1_1.updated_by 
+    from
+        user_profiles p1_0 
+    join
+        profiles p1_1 
+            on p1_1.id=p1_0.profile_id 
+    left join
+        profile_transactions t1_0 
+            on p1_1.id=t1_0.profile_id 
+    left join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        p1_0.user_id=?
+2026-10-01 13:06:01 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.user_id,
+        p1_1.id,
+        p1_1.created_at,
+        p1_1.created_by,
+        p1_1.name,
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by,
+        p1_1.updated_at,
+        p1_1.updated_by 
+    from
+        user_profiles p1_0 
+    join
+        profiles p1_1 
+            on p1_1.id=p1_0.profile_id 
+    left join
+        profile_transactions t1_0 
+            on p1_1.id=t1_0.profile_id 
+    left join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        p1_0.user_id=?
+2026-10-01 13:06:01 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.user_id,
+        p1_1.id,
+        p1_1.created_at,
+        p1_1.created_by,
+        p1_1.name,
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by,
+        p1_1.updated_at,
+        p1_1.updated_by 
+    from
+        user_profiles p1_0 
+    join
+        profiles p1_1 
+            on p1_1.id=p1_0.profile_id 
+    left join
+        profile_transactions t1_0 
+            on p1_1.id=t1_0.profile_id 
+    left join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        p1_0.user_id=?
+2026-10-01 13:06:01 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.user_id,
+        p1_1.id,
+        p1_1.created_at,
+        p1_1.created_by,
+        p1_1.name,
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by,
+        p1_1.updated_at,
+        p1_1.updated_by 
+    from
+        user_profiles p1_0 
+    join
+        profiles p1_1 
+            on p1_1.id=p1_0.profile_id 
+    left join
+        profile_transactions t1_0 
+            on p1_1.id=t1_0.profile_id 
+    left join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        p1_0.user_id=?
+2026-10-01 13:06:03 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.created_by,
+        p1_0.name,
+        p1_0.updated_at,
+        p1_0.updated_by 
+    from
+        profiles p1_0
+2026-10-01 13:06:03 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by 
+    from
+        profile_transactions t1_0 
+    join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        t1_0.profile_id=?
+2026-10-01 13:06:03 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.id,
+        t1_0.created_at,
+        t1_0.created_by,
+        t1_0.icon,
+        t1_0.name,
+        t1_0.parent_id,
+        t1_0.route,
+        t1_0.updated_at,
+        t1_0.updated_by 
+    from
+        transactions t1_0
+2026-10-01 13:06:03 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by 
+    from
+        profile_transactions t1_0 
+    join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        t1_0.profile_id=?
+2026-10-01 13:06:03 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by 
+    from
+        profile_transactions t1_0 
+    join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        t1_0.profile_id=?
+2026-10-01 13:06:11 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.active,
+        u1_0.created_at,
+        u1_0.created_by,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.has_active_fine,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.tax_id,
+        u1_0.updated_at,
+        u1_0.updated_by 
+    from
+        users u1_0
+2026-10-01 13:06:11 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        b1_0.id,
+        b1_0.author,
+        b1_0.available_copies,
+        b1_0.created_at,
+        b1_0.created_by,
+        b1_0.isbn,
+        b1_0.title,
+        b1_0.updated_at,
+        b1_0.updated_by 
+    from
+        books b1_0
+2026-10-01 13:06:11 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.user_id,
+        p1_1.id,
+        p1_1.created_at,
+        p1_1.created_by,
+        p1_1.name,
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by,
+        p1_1.updated_at,
+        p1_1.updated_by 
+    from
+        user_profiles p1_0 
+    join
+        profiles p1_1 
+            on p1_1.id=p1_0.profile_id 
+    left join
+        profile_transactions t1_0 
+            on p1_1.id=t1_0.profile_id 
+    left join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        p1_0.user_id=?
+2026-10-01 13:06:11 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.user_id,
+        p1_1.id,
+        p1_1.created_at,
+        p1_1.created_by,
+        p1_1.name,
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by,
+        p1_1.updated_at,
+        p1_1.updated_by 
+    from
+        user_profiles p1_0 
+    join
+        profiles p1_1 
+            on p1_1.id=p1_0.profile_id 
+    left join
+        profile_transactions t1_0 
+            on p1_1.id=t1_0.profile_id 
+    left join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        p1_0.user_id=?
+2026-10-01 13:06:11 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.user_id,
+        p1_1.id,
+        p1_1.created_at,
+        p1_1.created_by,
+        p1_1.name,
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by,
+        p1_1.updated_at,
+        p1_1.updated_by 
+    from
+        user_profiles p1_0 
+    join
+        profiles p1_1 
+            on p1_1.id=p1_0.profile_id 
+    left join
+        profile_transactions t1_0 
+            on p1_1.id=t1_0.profile_id 
+    left join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        p1_0.user_id=?
+2026-10-01 13:06:11 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.user_id,
+        p1_1.id,
+        p1_1.created_at,
+        p1_1.created_by,
+        p1_1.name,
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by,
+        p1_1.updated_at,
+        p1_1.updated_by 
+    from
+        user_profiles p1_0 
+    join
+        profiles p1_1 
+            on p1_1.id=p1_0.profile_id 
+    left join
+        profile_transactions t1_0 
+            on p1_1.id=t1_0.profile_id 
+    left join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        p1_0.user_id=?
+2026-10-01 13:06:11 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.user_id,
+        p1_1.id,
+        p1_1.created_at,
+        p1_1.created_by,
+        p1_1.name,
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by,
+        p1_1.updated_at,
+        p1_1.updated_by 
+    from
+        user_profiles p1_0 
+    join
+        profiles p1_1 
+            on p1_1.id=p1_0.profile_id 
+    left join
+        profile_transactions t1_0 
+            on p1_1.id=t1_0.profile_id 
+    left join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        p1_0.user_id=?
+2026-10-01 13:06:14 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.id,
+        l1_0.book_id,
+        l1_0.checkout_date,
+        l1_0.created_at,
+        l1_0.created_by,
+        l1_0.due_date,
+        l1_0.return_date,
+        l1_0.status,
+        l1_0.updated_at,
+        l1_0.updated_by,
+        l1_0.user_id 
+    from
+        loans l1_0 
+    where
+        l1_0.user_id=?
+2026-10-01 13:06:14 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        b1_0.id,
+        b1_0.author,
+        b1_0.available_copies,
+        b1_0.created_at,
+        b1_0.created_by,
+        b1_0.isbn,
+        b1_0.title,
+        b1_0.updated_at,
+        b1_0.updated_by 
+    from
+        books b1_0 
+    where
+        b1_0.id=?
+2026-10-01 13:06:16 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.active,
+        u1_0.created_at,
+        u1_0.created_by,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.has_active_fine,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.tax_id,
+        u1_0.updated_at,
+        u1_0.updated_by 
+    from
+        users u1_0
+2026-10-01 13:06:16 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.user_id,
+        p1_1.id,
+        p1_1.created_at,
+        p1_1.created_by,
+        p1_1.name,
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by,
+        p1_1.updated_at,
+        p1_1.updated_by 
+    from
+        user_profiles p1_0 
+    join
+        profiles p1_1 
+            on p1_1.id=p1_0.profile_id 
+    left join
+        profile_transactions t1_0 
+            on p1_1.id=t1_0.profile_id 
+    left join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        p1_0.user_id=?
+2026-10-01 13:06:16 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.user_id,
+        p1_1.id,
+        p1_1.created_at,
+        p1_1.created_by,
+        p1_1.name,
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by,
+        p1_1.updated_at,
+        p1_1.updated_by 
+    from
+        user_profiles p1_0 
+    join
+        profiles p1_1 
+            on p1_1.id=p1_0.profile_id 
+    left join
+        profile_transactions t1_0 
+            on p1_1.id=t1_0.profile_id 
+    left join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        p1_0.user_id=?
+2026-10-01 13:06:16 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.user_id,
+        p1_1.id,
+        p1_1.created_at,
+        p1_1.created_by,
+        p1_1.name,
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by,
+        p1_1.updated_at,
+        p1_1.updated_by 
+    from
+        user_profiles p1_0 
+    join
+        profiles p1_1 
+            on p1_1.id=p1_0.profile_id 
+    left join
+        profile_transactions t1_0 
+            on p1_1.id=t1_0.profile_id 
+    left join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        p1_0.user_id=?
+2026-10-01 13:06:16 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.user_id,
+        p1_1.id,
+        p1_1.created_at,
+        p1_1.created_by,
+        p1_1.name,
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by,
+        p1_1.updated_at,
+        p1_1.updated_by 
+    from
+        user_profiles p1_0 
+    join
+        profiles p1_1 
+            on p1_1.id=p1_0.profile_id 
+    left join
+        profile_transactions t1_0 
+            on p1_1.id=t1_0.profile_id 
+    left join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        p1_0.user_id=?
+2026-10-01 13:06:16 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        b1_0.id,
+        b1_0.author,
+        b1_0.available_copies,
+        b1_0.created_at,
+        b1_0.created_by,
+        b1_0.isbn,
+        b1_0.title,
+        b1_0.updated_at,
+        b1_0.updated_by 
+    from
+        books b1_0
+2026-10-01 13:06:16 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.user_id,
+        p1_1.id,
+        p1_1.created_at,
+        p1_1.created_by,
+        p1_1.name,
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by,
+        p1_1.updated_at,
+        p1_1.updated_by 
+    from
+        user_profiles p1_0 
+    join
+        profiles p1_1 
+            on p1_1.id=p1_0.profile_id 
+    left join
+        profile_transactions t1_0 
+            on p1_1.id=t1_0.profile_id 
+    left join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        p1_0.user_id=?
+2026-10-01 13:06:28 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.active,
+        u1_0.created_at,
+        u1_0.created_by,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.has_active_fine,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.tax_id,
+        u1_0.updated_at,
+        u1_0.updated_by 
+    from
+        users u1_0
+2026-10-01 13:06:28 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.user_id,
+        p1_1.id,
+        p1_1.created_at,
+        p1_1.created_by,
+        p1_1.name,
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by,
+        p1_1.updated_at,
+        p1_1.updated_by 
+    from
+        user_profiles p1_0 
+    join
+        profiles p1_1 
+            on p1_1.id=p1_0.profile_id 
+    left join
+        profile_transactions t1_0 
+            on p1_1.id=t1_0.profile_id 
+    left join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        p1_0.user_id=?
+2026-10-01 13:06:28 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.user_id,
+        p1_1.id,
+        p1_1.created_at,
+        p1_1.created_by,
+        p1_1.name,
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by,
+        p1_1.updated_at,
+        p1_1.updated_by 
+    from
+        user_profiles p1_0 
+    join
+        profiles p1_1 
+            on p1_1.id=p1_0.profile_id 
+    left join
+        profile_transactions t1_0 
+            on p1_1.id=t1_0.profile_id 
+    left join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        p1_0.user_id=?
+2026-10-01 13:06:28 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.user_id,
+        p1_1.id,
+        p1_1.created_at,
+        p1_1.created_by,
+        p1_1.name,
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by,
+        p1_1.updated_at,
+        p1_1.updated_by 
+    from
+        user_profiles p1_0 
+    join
+        profiles p1_1 
+            on p1_1.id=p1_0.profile_id 
+    left join
+        profile_transactions t1_0 
+            on p1_1.id=t1_0.profile_id 
+    left join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        p1_0.user_id=?
+2026-10-01 13:06:28 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.user_id,
+        p1_1.id,
+        p1_1.created_at,
+        p1_1.created_by,
+        p1_1.name,
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by,
+        p1_1.updated_at,
+        p1_1.updated_by 
+    from
+        user_profiles p1_0 
+    join
+        profiles p1_1 
+            on p1_1.id=p1_0.profile_id 
+    left join
+        profile_transactions t1_0 
+            on p1_1.id=t1_0.profile_id 
+    left join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        p1_0.user_id=?
+2026-10-01 13:06:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.created_by,
+        p1_0.name,
+        p1_0.updated_at,
+        p1_0.updated_by 
+    from
+        profiles p1_0
+2026-10-01 13:06:28 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.user_id,
+        p1_1.id,
+        p1_1.created_at,
+        p1_1.created_by,
+        p1_1.name,
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by,
+        p1_1.updated_at,
+        p1_1.updated_by 
+    from
+        user_profiles p1_0 
+    join
+        profiles p1_1 
+            on p1_1.id=p1_0.profile_id 
+    left join
+        profile_transactions t1_0 
+            on p1_1.id=t1_0.profile_id 
+    left join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        p1_0.user_id=?
+2026-10-01 13:06:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by 
+    from
+        profile_transactions t1_0 
+    join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        t1_0.profile_id=?
+2026-10-01 13:06:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by 
+    from
+        profile_transactions t1_0 
+    join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        t1_0.profile_id=?
+2026-10-01 13:06:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by 
+    from
+        profile_transactions t1_0 
+    join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        t1_0.profile_id=?
+2026-10-01 14:10:23 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.active,
+        u1_0.created_at,
+        u1_0.created_by,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.has_active_fine,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.tax_id,
+        u1_0.updated_at,
+        u1_0.updated_by 
+    from
+        users u1_0
+2026-10-01 14:10:23 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.created_by,
+        p1_0.name,
+        p1_0.updated_at,
+        p1_0.updated_by 
+    from
+        profiles p1_0
+2026-10-01 14:10:23 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.user_id,
+        p1_1.id,
+        p1_1.created_at,
+        p1_1.created_by,
+        p1_1.name,
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by,
+        p1_1.updated_at,
+        p1_1.updated_by 
+    from
+        user_profiles p1_0 
+    join
+        profiles p1_1 
+            on p1_1.id=p1_0.profile_id 
+    left join
+        profile_transactions t1_0 
+            on p1_1.id=t1_0.profile_id 
+    left join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        p1_0.user_id=?
+2026-10-01 14:10:23 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by 
+    from
+        profile_transactions t1_0 
+    join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        t1_0.profile_id=?
+2026-10-01 14:10:23 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by 
+    from
+        profile_transactions t1_0 
+    join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        t1_0.profile_id=?
+2026-10-01 14:10:23 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.user_id,
+        p1_1.id,
+        p1_1.created_at,
+        p1_1.created_by,
+        p1_1.name,
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by,
+        p1_1.updated_at,
+        p1_1.updated_by 
+    from
+        user_profiles p1_0 
+    join
+        profiles p1_1 
+            on p1_1.id=p1_0.profile_id 
+    left join
+        profile_transactions t1_0 
+            on p1_1.id=t1_0.profile_id 
+    left join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        p1_0.user_id=?
+2026-10-01 14:10:23 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by 
+    from
+        profile_transactions t1_0 
+    join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        t1_0.profile_id=?
+2026-10-01 14:10:23 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.user_id,
+        p1_1.id,
+        p1_1.created_at,
+        p1_1.created_by,
+        p1_1.name,
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by,
+        p1_1.updated_at,
+        p1_1.updated_by 
+    from
+        user_profiles p1_0 
+    join
+        profiles p1_1 
+            on p1_1.id=p1_0.profile_id 
+    left join
+        profile_transactions t1_0 
+            on p1_1.id=t1_0.profile_id 
+    left join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        p1_0.user_id=?
+2026-10-01 14:10:23 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.user_id,
+        p1_1.id,
+        p1_1.created_at,
+        p1_1.created_by,
+        p1_1.name,
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by,
+        p1_1.updated_at,
+        p1_1.updated_by 
+    from
+        user_profiles p1_0 
+    join
+        profiles p1_1 
+            on p1_1.id=p1_0.profile_id 
+    left join
+        profile_transactions t1_0 
+            on p1_1.id=t1_0.profile_id 
+    left join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        p1_0.user_id=?
+2026-10-01 14:10:23 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.user_id,
+        p1_1.id,
+        p1_1.created_at,
+        p1_1.created_by,
+        p1_1.name,
+        t1_0.profile_id,
+        t1_1.id,
+        t1_1.created_at,
+        t1_1.created_by,
+        t1_1.icon,
+        t1_1.name,
+        t1_1.parent_id,
+        t1_1.route,
+        st1_0.parent_id,
+        st1_0.id,
+        st1_0.created_at,
+        st1_0.created_by,
+        st1_0.icon,
+        st1_0.name,
+        st1_0.route,
+        st1_0.updated_at,
+        st1_0.updated_by,
+        t1_1.updated_at,
+        t1_1.updated_by,
+        p1_1.updated_at,
+        p1_1.updated_by 
+    from
+        user_profiles p1_0 
+    join
+        profiles p1_1 
+            on p1_1.id=p1_0.profile_id 
+    left join
+        profile_transactions t1_0 
+            on p1_1.id=t1_0.profile_id 
+    left join
+        transactions t1_1 
+            on t1_1.id=t1_0.transaction_id 
+    left join
+        transactions st1_0 
+            on t1_1.id=st1_0.parent_id 
+    where
+        p1_0.user_id=?
